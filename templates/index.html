@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<!-- <html>
+    <head>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    </head>
+    <body>
+        <form action = "http://localhost:5000/upload" method = "POST" enctype = "multipart/form-data">
+            <input type = "file" name = "file" />
+            <input type = "submit"/>
+        </form>
+        <div id="video-preview"></div>
+        <div id="videos">
+        </div>
+        <script src="/static/js/main.js"></script>
+    </body>
+</html> -->
+
+<!-- <!DOCTYPE html>
+<html>
+    <head>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    </head>
+    <body>
+        <form action="/upload" method="POST" enctype="multipart/form-data">
+            <input type="file" name="file" />
+            <input type="submit" />
+        </form>
+        <div id="video-preview"></div>
+        <div id="videos">
+            {% for filename in filenames %}
+            <a href="{{ url_for('uploaded_file', filename=filename) }}">{{ filename }}</a><br>
+            {% endfor %}
+        </div>
+        <script src="/static/js/main.js"></script>
+    </body>
+</html> -->
+
+<!DOCTYPE html>
+<!-- jede html seite beginnt wie diese -->
+<html>
+  <!-- hier im head laden wir jQuery (eine Javascript Library) herunter -->
+    <head>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    </head>
+    <body>
+      <!-- das ist unser Form-feld für den File upload -->
+        <form action="/upload" method="POST" enctype="multipart/form-data">
+            <input type="file" name="file" />
+            <input type="submit" />
+        </form>
+        <!-- hier wird das Video angezeigt -->
+        <div id="video-preview"></div>
+        <!-- hier werden die Videos angezeigt -->
+        <div id="videos">
+            {% for filename in filenames %}
+            <a href="{{ url_for('uploaded_file', filename=filename) }}">{{ filename }}</a><br>
+            {% endfor %}
+        </div>
+        <!-- erstellt einen button auf den man klicken kann für die Filelist. Zur zeit springt dieser aber nirgends hin, da kein POST -->
+        <button id="file-list-button">View File List</button>
+        <!-- erklärt der Seite wo die javascript scripte zu finden sind in deiner App -->
+        <script src="/static/js/main.js"></script>
+    </body>
+</html>
+
+
